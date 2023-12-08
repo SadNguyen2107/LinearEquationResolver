@@ -2,18 +2,18 @@
 {
     public class Program
     {
-        public static double GetConstantInput(string constant)
+        public static double GetConstantInput(string prompt)
         {
             // Return Result 
             double num;
 
-        askConstantInput:
-            Console.Write($"{constant}: ");
+        askNumInput:
+            Console.Write($"{prompt}: ");
             bool issuccess = Double.TryParse(Console.ReadLine(), out num);
             if (!issuccess)
             {
-                Console.WriteLine($"{constant} Cannot Be A Character or String!");
-                goto askConstantInput;
+                Console.WriteLine($"{prompt} Cannot Be A Character or String!");
+                goto askNumInput;
             }
 
             return num;
